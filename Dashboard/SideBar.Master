@@ -1,0 +1,137 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="SideBar.master.cs" Inherits="ViewMax.Dashboard.SideBar" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="Style.css" rel="stylesheet" type="text/css" />
+</head>
+<body >
+    <form id="form1" runat="server">
+        <section>
+            <asp:CheckBox ID="toggle" runat="server" OnCheckedChanged="toggle_CheckedChanged" />
+            <div class="sidebar">
+                <div class="logo"><img src="../m_images/VMAXW.png" height="27px"/></div>
+                <div>
+                    <ul>
+                        <li>
+                            <a class="<%=(System.IO.Path.GetFileName(Request.PhysicalPath).ToString().ToUpper() == "DASHBOARD.ASPX" ? "active" : " ")%>" href="dashboard.aspx">
+                                <i class="top_left"></i><i class="top_right"></i>
+                                <asp:Image ID="Image1" runat="server" ImageUrl="~/Dashboard/images/icon-dashboard.png" />
+                                <span>Dashboard</span>
+                            </a>
+
+                        </li>
+                        <li>
+                            <a class="<%=(System.IO.Path.GetFileName(Request.PhysicalPath).ToString().ToUpper() == "ADMIN.ASPX" ? "active" : " ")%>" href="admin.aspx">
+                                <i class="top_left"></i><i class="top_right"></i>
+                                <asp:Image ID="Image2" runat="server" ImageUrl="~/Dashboard/images/icon-admin-settings-male.png" />
+                                <span>Admin</span>
+
+                            </a>
+
+                        </li>
+                        <li>
+                            <a class="<%=(System.IO.Path.GetFileName(Request.PhysicalPath).ToString().ToUpper() == "USER.ASPX" ? "active" : " ")%>" href="user.aspx">
+                                <i class="top_left"></i><i class="top_right"></i>
+                                <asp:Image ID="Image3" runat="server" ImageUrl="~/Dashboard/images/icons8-select-users.png" />
+                                <span>Users</span>
+
+                            </a>
+
+                        </li>
+                        <li>
+                            <a class="<%=(System.IO.Path.GetFileName(Request.PhysicalPath).ToString().ToUpper() == "MOVIE.ASPX" ? "active" : " ")%>" href="movie.aspx">
+                                <i class="top_left"></i><i class="top_right"></i>
+                                <asp:Image ID="Image4" runat="server" ImageUrl="~/Dashboard/images/icons8-movie-projector-50.png" />
+                                <span>Movies</span>
+
+                            </a>
+
+                        </li>
+                        <li>
+                            <a class="<%=(System.IO.Path.GetFileName(Request.PhysicalPath).ToString().ToUpper() == "THEATRE.ASPX" ? "active" : " ")%>" href="theatre.aspx">
+                                <i class="top_left"></i><i class="top_right"></i>
+                                <asp:Image ID="Image5" runat="server" ImageUrl="~/Dashboard/images/icons8-movie-theater-64.png" />
+                                <span>Theatre</span>
+
+                            </a>
+
+                        </li>
+                        <li>
+                            <a class="<%=(System.IO.Path.GetFileName(Request.PhysicalPath).ToString().ToUpper() == "HALL.ASPX" ? "active" : " ")%>" href="Hall.aspx">
+                                <i class="top_left"></i><i class="top_right"></i>
+                                <asp:Image ID="Image6" runat="server" ImageUrl="~/Dashboard/images/icons8-movie-theater-50.png" />
+                                <span>Hall</span>
+
+                            </a>
+
+                        </li>
+                        <li>
+                            <a class="<%=(System.IO.Path.GetFileName(Request.PhysicalPath).ToString().ToUpper() == "SHOW.ASPX" ? "active" : " ")%>" href="Show.aspx">
+                                <i class="top_left"></i><i class="top_right"></i>
+                                <asp:Image ID="Image7" runat="server" ImageUrl="~/Dashboard/images/icon-dashboard.png" />
+                                <span>Show</span>
+                            </a>
+
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="logout"><h3>Logout</h3></div>
+            </div>
+            
+            <div class="section">
+                <div class="nav">
+                    <div class="hamburger">
+                        <label class="navbar_toggler" for="toggle" onclick="CheckBox_Changed()">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </label>
+                    </div>
+                    <div class="account">
+                        Login<asp:Label ID="Label1" runat="server" Text="Label"></asp:Label>
+                    </div>
+                </div>
+                <div>
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </section>
+        
+    </form>
+</body>
+    <script>
+        var checkbox = document.getElementById("toggle");
+        var label = document.getElementById("Label1");
+
+        
+        var vx = sessionStorage.getItem("chbox");
+        var boolVx = (String(vx).toLowerCase() === 'true');
+        if (sessionStorage['chbox']) {
+            checkbox.checked = boolVx;
+        }
+        console.log(boolVx);
+
+        function CheckBox_Changed() {
+
+            if (checkbox.checked == false) {
+                sessionStorage.setItem("chbox", true);
+                label.innerText = true;
+            }
+            else {
+                sessionStorage.setItem("chbox", false);
+                label.innerText = false;
+            }
+            var x = sessionStorage.getItem("chbox");
+
+            console.log(x);
+        }
+
+    </script>
+</html>

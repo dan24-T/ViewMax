@@ -1,0 +1,32 @@
+﻿:root {
+    --main: #131214;
+    --main2: #dbd9e1;
+    --sec: #ffffff;
+    --sec2: #e8f0f3;
+}
+.seat_box {
+    width: 100%;
+    height: auto;
+    background: var(--main2);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.seat_row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.seat_space {
+    width: 50px;
+    height: 25px;
+    border: 2px solid black;
+    cursor: pointer;
+}
+
+.data-hr .span{
+    font-size: .7em;
+    color: blue;
+}

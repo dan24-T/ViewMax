@@ -1,0 +1,240 @@
+﻿.main-section{
+    width: 98%;
+    margin: auto auto;
+}
+
+.section-title{
+    width: 100%;
+    height: 100px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #d4bdbd;
+}
+
+.first-slider .swiper,
+.first-slider .swiper img {
+    width: 100%;
+    height: 581px;
+    object-fit: cover;
+    object-position: center;
+}
+.first-slider .swiper img{
+    height: 100%;
+    filter: brightness(.7);
+    transition: transform 1s ease-in-out;
+}
+
+.first-slider .swiper-slide:after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background: radial-gradient(farthest-corner at 65% 50%, rgba(240, 240, 240, 0), rgba(0, 0, 0, .7) );
+    transition: 1s ease-in;
+}
+
+.first-slider .swiper-slide:hover:after {
+    opacity: .1;
+}
+
+.swiper-slide:hover > img {
+    transform: scale(1.05);
+}
+
+.first-slider .card-details {
+    width: 20%;
+    left: 100px;
+    bottom: 75px;
+}
+
+.card-details {
+    display: flex;
+    position: absolute;
+    flex-wrap: wrap;
+    color: aliceblue;
+    z-index: 2;
+    text-transform:uppercase;
+}
+
+.second-slider .swiper {
+    width: 100%;
+    height: 600px;
+}
+
+.second-slider .card-details {
+    width: 80%;
+    bottom: 30px;
+    left: 10%;
+}
+
+.second-slider .swiper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .6s ease;
+}
+
+.second-slider .swiper-slide:after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    left: 0px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(240, 240, 240, 0));
+    transition: .6s ease;
+}
+
+.second-slider .swiper-slide:hover:after {
+    opacity: 0.1;
+    transform: scale(1.05);
+}
+
+.container {
+    display: flex;
+    width: 100%;
+    position: relative;
+    flex-wrap: wrap;
+    background: #363a40;
+}
+
+.movie-card{ 
+    width: 25%;
+    height: 350px;
+    position: relative;
+}
+
+.last-slider .movie-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    transition: transform .6s ease;
+}
+
+.last-slider .card-details {
+    width: 80%;
+    color: aliceblue;
+    bottom: 30px;
+    left: 7%;
+    position:absolute;
+}
+
+section .swiper p,
+section .container p{
+    width: 100%;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0 0px 10px 0px;
+}
+
+section .swiper .span,
+section .container .span {
+    width: 100%;
+    font-size: .9rem;
+    font-weight: 300;
+    margin: 0;
+    color: #0072ce;
+    padding: 0 0px 5px 0px;
+}
+
+section a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 25px 10px 25px;
+    border: 3px solid white;
+    transition: .6s ease;
+}
+
+section a:hover{
+    color: blue;
+    border: 3px solid blue;
+}
+
+.showing {
+    text-decoration: none;
+    color: white;
+    background: blue;
+    padding: 10px 28px 10px 28px;
+    border: none;
+    transition: .5s ease;
+    position: relative;
+}
+.showing span{
+    position: relative;
+    z-index: 2;
+}
+.showing:hover{
+    color: #080707;
+    border: none;
+}
+.showing::before{
+    content:"";
+    position: absolute;
+    bottom:0;
+    left:0;
+    width:0%;
+    height:100%;
+    background: aliceblue;
+    transition: .5s ease-out;
+}
+.showing:hover::before{
+    width: 100%;
+}
+
+@media all and (max-width: 1200px) {
+    .first-slider .swiper,
+    .first-slider .swiper img {
+        height: 500px;
+    }
+    .movie-card {
+        width: 33.333%;
+        height: 300px;
+    }
+}
+
+@media all and (max-width: 1100px){
+    .second-slider .swiper {
+        height: 511px;
+    }
+}
+
+@media all and (max-width: 1000px) {
+    .second-slider .swiper {
+        height: 600px;
+    }
+}
+
+@media all and (max-width: 900px) {
+    first-slider .swiper,
+    .first-slider .swiper img {
+        height: 481px;
+    }
+
+    .movie-card {
+        height: 290px;
+    }
+}
+
+@media all and (max-width: 800px) {
+    .first-slider .swiper,
+    .first-slider .swiper img {
+        height: 350px;
+    }
+    .movie-card {
+        width: 50%;
+        height: 240px;
+    }
+}
+
+@media all and (max-width: 600px){
+    .first-slider .swiper,
+    .first-slider .swiper img{
+        height: 300px;
+    }
+}

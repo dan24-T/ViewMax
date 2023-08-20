@@ -1,0 +1,489 @@
+﻿* {
+    text-transform: uppercase;
+    letter-spacing: .145ex;
+}
+:root {
+    --main: #131214;
+    --main2: #dbd9e1;
+    --sec: #ffffff;
+    --sec2: #e8f0f3;
+}
+
+*{
+    font-family: sans-serif;
+}
+
+body{
+    background: var(--sec);
+}
+
+.pnlMessage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.sidebar{
+    width: 18%;
+    height: 98%;
+    position: fixed;
+    background: var(--main);
+    border-radius: 10px;
+    transition: .6s ease-out;
+}
+
+.sidebar ul {
+    list-style: none;
+    color: azure;
+    padding-inline-start:0px;
+}
+
+.sidebar ul li{
+    cursor: pointer;
+    position:relative;
+}
+
+.sidebar ul li a{
+    height: 60px;
+    display: flex;
+    align-items: center;
+    color: azure;
+    transition: .6s ease;
+}
+
+.active {
+    background: var(--sec);
+}
+
+.active span{
+    color:#131214;
+}
+
+    .active img {
+        filter: saturate(500%) contrast(800%) brightness(500%) invert(80%) sepia(50%) hue-rotate(120deg);
+    }
+
+/* The newly created pseudo element */
+.active::before {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    background-color: transparent;
+    bottom: -50px;
+    right: 0;
+    height: 50px;
+    width: 15px;
+    border-top-right-radius: 15px;
+    box-shadow: 0 -15px 0 0 var(--sec); /* This is where the magic happens! */
+}
+
+.active::after {
+    content: "";
+    position: absolute;
+    z-index: 2;
+    background-color: transparent;
+    bottom: -50px;
+    height: 50px;
+    width: 15px;
+    border-top-left-radius: 15px;
+    box-shadow: 0 -15px 0 0 var(--sec); /* This is where the magic happens! */
+}
+
+.active i.top_left{
+    position: absolute;
+    z-index: 2;
+    background-color: transparent;
+    top: -50px;
+    height: 50px;
+    width: 15px;
+    border-bottom-left-radius: 15px;
+    box-shadow: 0 15px 0 0 var(--sec);
+}
+
+.active i.top_right{
+    position: absolute;
+    z-index: 2;
+    background-color: transparent;
+    top: -50px;
+    right: 0;
+    height: 50px;
+    width: 15px;
+    border-bottom-right-radius: 15px;
+    box-shadow: 0 15px 0 0 var(--sec);
+}
+
+.sidebar ul li a:hover{
+    background: var(--main2);
+}
+
+.sidebar ul li a.active:hover {
+    background: var(--sec);
+}
+
+.sidebar ul li img {
+    width: 20px;
+    margin-right: 20px;
+    padding-inline-start: 30px;
+}
+
+.sidebar ul li a span {
+    transition: .6s ease-out;
+}
+
+.sidebar .logo,
+.sidebar .logout{
+    padding-left: 25px;
+}
+
+.logout{
+    position: absolute;
+    bottom: 0;
+}
+
+.section{
+    width: 81%;
+    margin-left: 19%;
+    transition: .6s ease-out;
+}
+
+.nav{
+    background: var(--main);
+    height: 60px;
+    display: flex;
+    position: relative;
+    flex-wrap: nowrap;
+    align-items: center;
+    padding: 0 20px;
+    border-radius: 10px;
+}
+
+.nav .account{
+    right: 0;
+    position: absolute;
+    padding-right: 20px;
+}
+
+.navbar_toggler {
+    height: min-content;
+    margin: 5px 5px 0 0;
+    cursor: pointer;
+    display: grid !important;
+}
+
+.navbar_toggler .bar{
+    width: 30px;
+    height: 2px;
+    margin-bottom: 6px;
+    background: #fff;
+    border-radius: 10%;
+    transition: .4s;
+}
+
+#toggle {
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ div.sidebar {
+    width: 5%;
+}
+input[type="checkbox"]:checked ~ div.section {
+    width: 94%;
+    margin-left: 6%;
+}
+input[type="checkbox"]:checked ~ div.sidebar ul li img {
+    padding-inline-start: 20px;
+    padding-inline-end: 20px;
+}
+input[type="checkbox"]:checked ~ div.sidebar ul li a span {
+    display: none;
+}
+#toggle:checked ~ .section .nav .hamburger .navbar_toggler .bar:nth-child(1){
+    position: absolute;
+    transform: rotate(-45deg);
+}
+
+#toggle:checked ~ .section .nav .hamburger .navbar_toggler .bar:nth-child(2) {
+    display: none;
+}
+
+#toggle:checked ~ .section .nav .hamburger .navbar_toggler .bar:nth-child(3) {
+    transform: rotate(45deg);
+}
+
+.cards-holder{
+    width: 100%;
+    display: flex;
+}
+
+.cards-holder .card{
+    width: 24%;
+    height: 140px;
+    background: var(--main2);
+    margin: auto;
+    border-radius: 5px;
+    cursor: pointer;
+    color: aliceblue;
+}
+
+.card div{
+    margin: 15px;
+}
+
+.card .c_icon{
+    display: flex;
+    font-size: xx-large;
+    align-items: center;
+    width: 100%;
+}
+
+.c_icon h1{
+    margin-left: 20%;
+    margin-block-start: 0;
+    margin-block-end: 0;
+}
+
+.stats-holder{
+    width: 100%;
+    display: flex;
+    margin-top: 30px;
+}
+
+.stats-holder div{
+    background: var(--main2);
+    height: 350px;
+    margin: auto;
+    border-radius: 5px;
+}
+
+.stats-holder .bar-graph{
+    width: 65%;
+}
+
+.stats-holder .pie-chart{
+    width: 33%;
+}
+
+.users-holder{
+    margin-top: 30px;
+}
+
+.log{
+    width: 99%;
+    height: 500px;
+    background: var(--main2);
+    margin: auto;
+}
+
+.cont{
+    width: 99%;
+    background: var(--main2);
+    margin: auto;
+    border-radius: 5px;
+}
+
+.holder{
+    padding: 10px 10px;
+}
+
+.count{
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    color: azure;
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.count img{
+    width: 20px;
+    margin-right: 10px;
+}
+
+.s-n-add{
+    position: relative;
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+}
+
+.s-n-add input{
+    width: 300px;
+    height: 30px;
+    border: none;
+    border-radius: 2px;
+    background: var(--sec2);
+}
+
+.s-n-add a{
+    position: absolute;
+    right: 0;
+    border: 3px solid blue;
+    border-radius: 5px;
+    padding: 10px 20px 10px 20px;
+    color: azure;
+}
+
+.table {
+    overflow-y: auto;
+}
+
+table, th, td {
+    border-bottom: 1px groove #3d1ca5;
+    border-collapse: collapse;
+    padding: 10px;
+}
+
+tr:nth-child(even) {
+    background-color: var(--sec2);
+}
+
+table th{
+    text-align: left;
+    letter-spacing: 0ex;
+    text-transform:none;
+    border-bottom: 1px solid black;
+}
+table td{
+    padding: 10px;
+    font-size: .85em;
+}
+
+table a{
+    border-radius: 2px;
+    color: black;
+}
+table a.edit{
+    background: green;
+    padding: 5px 10px 5px 10px;
+    color: azure;
+}
+table a.delete{
+    background: red;
+    padding: 5px 10px 5px 10px;
+    color: azure;
+}
+
+a:link{
+    text-decoration: none;
+}
+.errrorMMMM ul li{
+    text-transform: none;
+}
+.table::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+    background-color: #F5F5F5;
+}
+
+.table::-webkit-scrollbar {
+    width: 10px;
+    background-color: #F5F5F5;
+}
+
+.table::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border: 2px solid #555555;
+}
+
+.theatre{
+    border-bottom: 1px solid;
+}
+
+.theatre .thnad{
+    position: relative;
+    display: flex;
+}
+
+.theatre .i{
+    position: absolute;
+    right: 50px;
+}
+
+div.halls.viewed {
+    height: fit-content;
+}
+
+.theatre .halls{
+    width: 100%;
+    height: 1px;
+    background: var(--sec2);
+    position: relative;
+    transition: .6s ease;
+    overflow: hidden;
+}
+.names{
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: nowrap;
+}
+.names div{
+    width: 50%;
+}
+.data-hr .names input[type=text]{
+    width: 90%;
+}
+.data-hr span {
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 500;
+}
+.data-hr input[type=text],
+.data-hr input[type=password],
+.data-hr input[type=date],
+select{
+    width: 95%;
+    height: 30px;
+    background: var(--sec);
+    border: 1px groove ;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.data-hr input[type=Date]{
+    text-align: center;
+}
+
+.data-hr input[type=submit] {
+    width: 95%;
+    height: 30px;
+    background: green;
+    border: none;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+textarea{
+    width: 95%;
+}
+
+.profile .image{
+    width: fit-content;
+    position: relative;
+    top: 14px;
+    left: 0px;
+    height: 164px;
+}
+.profile .image img{
+   object-fit: cover;
+   object-position: center;
+}
+.profile .image label{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    transition: .5s ease-in-out;
+    color: var(--sec2);
+    padding: 50px 0px;
+}
+.pfp{
+    border-radius: 50%;
+    transition: .5s;
+}
+.profile .image:hover > .pfp{
+    opacity: .7;
+}
+.profile .image:hover > label{
+    opacity: 1;
+}

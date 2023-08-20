@@ -1,0 +1,283 @@
+﻿body {
+    margin: 0;
+    background: #c0cfe0;
+    font-family: sans-serif;
+    text-transform: uppercase;
+}
+
+header{
+    display: flex;
+    width: 100%;
+    border: none;
+}
+.nav {
+    width: 90%;
+    margin: 0 auto;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    letter-spacing: .145ex;
+}
+.d-t-h-f {
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background: #cbb7b7c7;
+    border-bottom: 4px solid blue;
+}
+.d-t-h{
+    width: 90%;
+    margin: 0 auto;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    background: lightsteelblue;
+    border-bottom: dashed;
+}
+
+.back{
+    display: flex;
+    width: 100%;
+    height: 40px;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1.4em; 
+    position: relative;
+    border-bottom: 2px solid black;
+}
+
+.arrow {
+    border: solid blue;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 8px;
+}
+
+.left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+}
+
+.back .i{
+    margin-left: 5px;
+    cursor: pointer;
+}
+.back .tit{
+    margin: 0 auto;
+}
+
+.movie-details{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 2px solid white; 
+}
+
+.movie-poster{
+    width: 25%;
+}
+.movie-info {
+    width: 30%;
+    height: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative; 
+    margin: 15px 0 0 0;
+}
+.movie-info div{
+    width: 100%;
+    height: 10px;
+    margin-left: 10px;
+    letter-spacing: .145ex;
+}
+
+.movie-poster img{
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    object-position:center;
+}
+
+.movie-info div.title {
+    font-size: 2em;
+    font-weight: 700;
+    letter-spacing: .0ex;
+}
+
+.movie-info div.age {
+    margin-left: 10px;
+    font-size: .85em;
+    letter-spacing: .145ex;
+    color: blue;
+}
+.movie-info div.theatre {
+    font-size: 1.6em;
+    font-weight: 500;
+    letter-spacing: .145ex;
+}
+
+.venue {
+    margin: 10px auto 0;
+    width: 95%;
+    border: 1px solid black;
+}
+
+.venue div{
+    margin: 10px auto 0;
+    width: 95%;
+}
+
+.venue div.time{
+    font-weight: 700;
+    letter-spacing: .145ex;
+}
+.venue div.format{
+    font-size: .88em;
+    margin-top: 0;
+    font-weight: 700;
+    letter-spacing: .145ex;
+    color: blue;
+    display: flex;
+}
+div.format .p {
+    color: gray;
+    font-weight: 400;
+    margin-left: 20px;
+}
+
+.venue div.no_of_tickets {
+    font-size: 1em;
+    margin: 50px 0px 10px 20px;
+    font-weight: 700;
+    letter-spacing: .145ex
+}
+
+div.no_of_tickets p{
+    margin: 0;
+}
+
+div.no_of_tickets .p {
+    font-weight: 400;
+    font-size: .75em;
+    color: blue;
+}
+
+
+/*-------------No of seats design- begins-------------*/
+.section{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.holder {
+    width: 95%;
+    margin: 30px auto 10px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-bottom: 30px;
+    border-bottom: 1px groove;
+}
+
+.holder div{
+    margin-left: 10px;
+}
+
+.prices p{
+    margin: 0;
+}
+
+.starnd p{
+    font-weight: 700;
+    font-size: .9em;
+}
+.starnd p.pz {
+    padding-top: 5px;
+    font-weight: 400;
+    font-size: .87em;
+}
+
+.holder .counter{
+    position: absolute;
+    right: 0;
+    display: flex;
+}
+/***--------COUNTER DSIGN----------------*/
+.counter div{
+    margin: 0;
+    height: 24px;
+    width: 24px;
+    display: flex;
+    border: 2.5px solid blue;
+    color: blue;
+    border-radius: 50%; 
+    font-size: 1.5em;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+.max{
+    opacity: .5;
+}
+
+.counter input{
+    text-align: center;
+    width: 50px;
+    background: none;
+    border: none;
+}
+
+/*--------next button---------*/
+.next{
+    width: 100%;
+    display: flex;
+}
+
+.next a{
+    margin: 20px auto;
+    padding: 10px 80px 10px 80px;
+    background: blue;
+    border: none;
+    color: aliceblue;
+    position: relative;
+}
+.next a span {
+    position: relative;
+    z-index: 2;
+}
+
+.next a:hover {
+    color: #080707;
+    border: none;
+}
+
+.next a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: #cbb7b7c7;
+    transition: .5s ease-out;
+}
+
+.next a:hover::before {
+    width: 100%;
+}
+
+footer {
+    margin-top: 10px;
+    text-align: center;
+    background: #569fd0;
+    height: 60px;
+    font-size: .75em;
+}
+
+.footer {
+    margin: 0 auto;
+    padding-top: 30px;
+    color: #fff;
+}

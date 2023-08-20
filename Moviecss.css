@@ -1,0 +1,239 @@
+﻿.image-section{
+    margin-top: 0px;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    position: relative;
+}
+.image-section .img{
+    width: 27%;
+    height: 100%;
+    position: absolute;
+    right: 0;
+}
+.image-section img{
+    width:100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+.image-section .video{
+    width: 73%;
+    height: 100%;
+}
+.video iframe{
+    width:100%;
+    height: 100%;
+    border: none;
+}
+.hide{
+    display: none;
+}
+
+.card-details {
+    width: 80%;
+    left: 20px;
+    bottom: 35px;
+}
+
+.image-section p{
+    width: 100%;
+    font-size: 2rem;
+    margin: 0;
+    padding: 0 0px 10px 0px;
+}
+
+.image-section .span{
+    width: 100%;
+    font-size: .9rem;
+    font-weight: 300;
+    margin: 0;
+    color: #0072ce;
+    padding: 0 0px 5px 0px;
+}
+.img:after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(240, 240, 240, 0));
+    transition: .6s ease;
+}
+.second-section {
+    background: #cbb7b7c7;
+}
+.booking-sect{
+    width: 95%;
+    margin: 0px auto;
+    padding-bottom: 30px;
+}
+
+.dates{
+    width:100%;
+    background: grey;
+    height:70px;
+}
+.dates ul{
+    padding: 0;
+    height: 100%;
+    border-bottom: 2px solid black;
+    text-align: center;
+}
+.dates ul li{
+    width: 14.285714%;
+    height: 100%;
+    border-left: .2px groove wheat;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+li.active{
+    background: black;
+    color: aliceblue;
+}
+li.active .d{
+    color: #0072ce;
+}
+
+.dates ul li:after{
+    content: "";
+    width: 100%;
+    height: 0%;
+    background: blue;
+    position: absolute;
+    transition: .5s ease;
+    bottom: 0;
+}
+
+.dates ul li:hover:after{
+    height: 4%;
+}
+
+.dates ul li input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    background: none;
+    z-index: 3;
+    position: absolute;
+}
+
+.dates ul li span{
+    width: 100%;
+    z-index: 2;
+}
+
+.d{
+    padding: 5px;
+    font-size: .7em;
+}
+
+.m {
+    font-size: 1em;
+}
+
+.n {
+    font-size: .9em;
+}
+
+.theatres{
+    width: 100%;
+}
+
+
+.theatre {
+    width: 98.8%;
+    border: 1px solid black;
+    border-radius: 2px;
+    margin: 20px auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px 0px 0 10px;
+}
+
+.theatre-name {
+    width: 100%;
+    font-size: 2rem;
+    margin-bottom: 10px;
+    letter-spacing: .145ex;
+}
+
+.theatre-name p{
+    font-size: .4em;
+    margin: 0;
+    line-height: 1.2;
+    color: blue;
+    text-transform: uppercase;
+}
+
+.theatre-halls{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    position:relative;
+    margin-bottom: 50px;
+}
+
+.hall {
+    width: 98%;
+    border-bottom: 2px solid black;
+    margin-bottom: 25px;
+}
+
+.hall-name p{
+    text-transform: uppercase;
+}
+.lbl_Theatre_id{
+    height: 0;
+    width: 0;
+    visibility: hidden;
+}
+
+.show-times {
+    display: flex;
+    height: fit-content;
+    position: relative;
+    margin-bottom: 30px;
+}
+
+.show-times a{
+    position: relative;
+    text-decoration: none;
+    color: white;
+    background: blue;
+    margin-right: 10px;
+    padding: 6px 25px 6px 25px;
+    border: none;
+    transition: .5s ease;
+    position: relative;
+}
+.show-times span{
+    position: relative;
+    font-size: .85em;
+    font-weight: 700;
+    z-index: 2;
+}
+.show-times a:hover{
+    color: black;
+    border: none;
+}
+.show-times a::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background: aliceblue;
+    transition: .5s ease-out;
+}
+.show-times a:hover::before {
+    width: 100%;
+}
+
+.papyrus{
+    font-family: Papyrus;
+}

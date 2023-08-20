@@ -1,0 +1,365 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{0A317584-6DCD-42B2-B02D-7CA05791EDF2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ViewMax</RootNamespace>
+    <AssemblyName>ViewMax</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44330</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Data\online.mdf" />
+    <Content Include="App_Data\online_log.ldf">
+      <DependentUpon>online.mdf</DependentUpon>
+    </Content>
+    <Content Include="CCheckout.aspx" />
+    <Content Include="checkout.css" />
+    <Content Include="createu.aspx" />
+    <Content Include="Dashboard\admin.aspx" />
+    <Content Include="Dashboard\dashboard.aspx" />
+    <Content Include="Dashboard\Hall.aspx" />
+    <Content Include="Dashboard\images\dash.png" />
+    <Content Include="Dashboard\images\dashb.png" />
+    <Content Include="Dashboard\images\icon-admin-settings-male.png" />
+    <Content Include="Dashboard\images\icon-dashboard.png" />
+    <Content Include="Dashboard\images\icons8-closed-eye-32.png" />
+    <Content Include="Dashboard\images\icons8-eye-50.png" />
+    <Content Include="Dashboard\images\icons8-movie-projector-50.png" />
+    <Content Include="Dashboard\images\icons8-movie-theater-50.png" />
+    <Content Include="Dashboard\images\icons8-movie-theater-64.png" />
+    <Content Include="Dashboard\images\icons8-select-users.png" />
+    <Content Include="Dashboard\images\icons8-sort-down-50.png" />
+    <Content Include="Dashboard\movie.aspx" />
+    <Content Include="Dashboard\seats.css" />
+    <Content Include="Dashboard\Show.aspx" />
+    <Content Include="Dashboard\Style.css" />
+    <Content Include="Dashboard\theatre.aspx" />
+    <Content Include="Dashboard\user.aspx" />
+    <Content Include="HomePage.aspx" />
+    <Content Include="HomePage.css" />
+    <Content Include="LoginU.aspx" />
+    <Content Include="Movie.aspx" />
+    <Content Include="Moviecss.css" />
+    <Content Include="m_images\animeh.jpg" />
+    <Content Include="m_images\Avatar.jpg" />
+    <Content Include="m_images\Avatr.jpg" />
+    <Content Include="m_images\gun.jpg" />
+    <Content Include="m_images\Intersteller.jpg" />
+    <Content Include="m_images\slide1.jpg" />
+    <Content Include="m_images\slide2.jpg" />
+    <Content Include="m_images\slide3.jpg" />
+    <Content Include="m_images\TheMartian .jpg" />
+    <Content Include="m_images\TheMartian.jpg" />
+    <Content Include="m_images\VMAX.png" />
+    <Content Include="m_images\VMAXW.png" />
+    <Content Include="NoOfSeats.aspx" />
+    <Content Include="screen.png" />
+    <Content Include="seats.aspx" />
+    <Content Include="seats.css" />
+    <Content Include="signin.css" />
+    <Content Include="SignOut.aspx" />
+    <Content Include="Style.css" />
+    <Content Include="swiper.js" />
+    <Content Include="swiper\swiper-bundle.min.css" />
+    <Content Include="Web.config" />
+    <Content Include="WebForm1.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CCheckout.aspx.cs">
+      <DependentUpon>CCheckout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CCheckout.aspx.designer.cs">
+      <DependentUpon>CCheckout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="CheckOut.Master.cs">
+      <DependentUpon>CheckOut.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="CheckOut.Master.designer.cs">
+      <DependentUpon>CheckOut.Master</DependentUpon>
+    </Compile>
+    <Compile Include="createu.aspx.cs">
+      <DependentUpon>createu.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="createu.aspx.designer.cs">
+      <DependentUpon>createu.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\admin.aspx.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\admin.aspx.designer.cs">
+      <DependentUpon>admin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\dashboard.aspx.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\dashboard.aspx.designer.cs">
+      <DependentUpon>dashboard.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\database.cs" />
+    <Compile Include="Dashboard\Hall.aspx.cs">
+      <DependentUpon>Hall.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Hall.aspx.designer.cs">
+      <DependentUpon>Hall.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\movie.aspx.cs">
+      <DependentUpon>movie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\movie.aspx.designer.cs">
+      <DependentUpon>movie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\Show.aspx.cs">
+      <DependentUpon>Show.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\Show.aspx.designer.cs">
+      <DependentUpon>Show.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\SideBar.Master.cs">
+      <DependentUpon>SideBar.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\SideBar.Master.designer.cs">
+      <DependentUpon>SideBar.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\theatre.aspx.cs">
+      <DependentUpon>theatre.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\theatre.aspx.designer.cs">
+      <DependentUpon>theatre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Dashboard\user.aspx.cs">
+      <DependentUpon>user.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Dashboard\user.aspx.designer.cs">
+      <DependentUpon>user.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoginU.aspx.cs">
+      <DependentUpon>LoginU.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoginU.aspx.designer.cs">
+      <DependentUpon>LoginU.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Login.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Movie.aspx.cs">
+      <DependentUpon>Movie.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Movie.aspx.designer.cs">
+      <DependentUpon>Movie.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="NoOfSeats.aspx.cs">
+      <DependentUpon>NoOfSeats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="NoOfSeats.aspx.designer.cs">
+      <DependentUpon>NoOfSeats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="online.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>online.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="seats.aspx.cs">
+      <DependentUpon>seats.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="seats.aspx.designer.cs">
+      <DependentUpon>seats.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="SignOut.aspx.cs">
+      <DependentUpon>SignOut.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SignOut.aspx.designer.cs">
+      <DependentUpon>SignOut.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Site1.Master.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Site1.Master.designer.cs">
+      <DependentUpon>Site1.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Theatre.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Theatre.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="WebForm1.aspx.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebForm1.aspx.designer.cs">
+      <DependentUpon>WebForm1.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CheckOut.Master" />
+    <Content Include="Dashboard\SideBar.Master" />
+    <Content Include="online.xsc">
+      <DependentUpon>online.xsd</DependentUpon>
+    </Content>
+    <Content Include="Login.xsc">
+      <DependentUpon>Login.xsd</DependentUpon>
+    </Content>
+    <None Include="Login.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Login.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Login.xss">
+      <DependentUpon>Login.xsd</DependentUpon>
+    </Content>
+    <None Include="online.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>online.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="online.xss">
+      <DependentUpon>online.xsd</DependentUpon>
+    </Content>
+    <None Include="packages.config" />
+    <Content Include="Site1.Master" />
+    <Content Include="Theatre.xsc">
+      <DependentUpon>Theatre.xsd</DependentUpon>
+    </Content>
+    <None Include="Theatre.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Theatre.Designer.cs</LastGenOutput>
+    </None>
+    <Content Include="Theatre.xss">
+      <DependentUpon>Theatre.xsd</DependentUpon>
+    </Content>
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Dashboard\pfp_images\" />
+    <Folder Include="Dashboard\poster_images\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52716</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44330/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

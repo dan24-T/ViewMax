@@ -1,0 +1,115 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="ViewMax.Site1" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title>VIEWMAX</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link rel="stylesheet" href="Style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  
+
+</head>
+<body>
+    <form id="form1" runat="server">
+            <header>
+                <div class="nav">
+                    <div class="nav_logo">
+                        <img  src="m_images/VMAX.png" height="27px"/>
+                    </div>
+                    
+                    <input type="checkbox" id="toggle"/>
+                    <div class="hamburger">
+                        <label class="navbar_toggler" for="toggle">
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                            <span class="bar"></span>
+                        </label>
+                    </div>
+
+                    <div class="dropdown" id="dropdown">
+                        <div class="nav_list">
+                            <ul>
+                                <li><a href="HomePage.aspx">HOME</a></li>
+                                <li><a href="Home.aspx">THEATRE</a></li>
+                                <li><a href="Home.aspx">SUPPORT</a></li>
+                            </ul>
+                        </div>
+
+                         <div class="account" onclick="Account()">
+                             <div class="pfp">
+                                  <p><a>D</a></p>
+                                  <img src="m_images/gun.jpg" />
+                             </div>
+                            <img src="Dashboard/images/icons8-sort-down-50.png"/>
+                             <div class="account_info" id="account_info" style="visibility: hidden;">
+                                 <ul>
+                                     <li onclick="Account_p()">Your Account Info</li>
+                                     <li runat="server" onclick="signOut()">Sign Out</li>
+                                 </ul>
+                             </div>
+                         </div>
+
+                    </div>
+                   
+                </div>
+                
+            </header>
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+            
+ 
+        <footer class="footer">
+            <p>&copy; 2023 Your Website. All rights reserved. | Designed by <a href="https://www.example.com" target="_blank">Your Name</a></p>
+                <div class="social-icons">
+                  <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                  <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                  <a href="https://www.whatsapp.com" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                  <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+      
+                    <%if (Session["level"] != null) {
+                        if (Session["level"].ToString() == "1")
+                        { %>
+                <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Dashboard/dashboard.aspx">Admin Page</asp:HyperLink>
+                 <%} }%>
+                </div>
+                
+    
+        </footer>
+    </form>
+
+    
+</body>
+    <script>
+        function Ham(ids) {
+            let drop = document.getElementById("dropdown");
+
+        }
+
+        function Account() {
+            var visibility_status = document.getElementById("account_info").style.visibility;
+
+            if (visibility_status == "hidden") {
+                document.getElementById("account_info").style.visibility = "visible";
+                console.log("show");
+            }
+            if (visibility_status == "visible") {
+                document.getElementById("account_info").style.visibility = "hidden";
+                console.log(visibility_status);
+            }
+            //window.location.href = "#";
+        }
+
+        function signOut() {
+            window.location.href = "SignOut.aspx";
+        }
+
+        function Account_p() {
+            window.location.href = "profle.aspx";
+        }
+
+    </script>
+</html>

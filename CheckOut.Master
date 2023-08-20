@@ -1,0 +1,64 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="CheckOut.master.cs" Inherits="ViewMax.CheckOut" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <link href="checkout.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    <form id="form1" runat="server">
+       <header>
+           <div class="nav">
+               <div class="nav-logo">
+                   <h2>VIEWMAX</h2>
+               </div>
+           </div>
+       </header>
+        <section class="d-t-h-f">
+            <asp:Repeater ID="Repeater1" runat="server" DataSourceID="Movie">
+                <ItemTemplate>
+                    <div class="back">
+                        <div class="i" onclick="history.back()"><i class="arrow left"></i></div>
+                        <div class="tit">BUY TICKETS</div>
+                    </div>
+                    <div class="movie-details" style="background-image: linear-gradient(to left, rgba(245, 246, 252, 0.52), rgba(16, 19, 87, 0.93)), url('<%# "Dashboard/poster_images/" + Eval ("Poster_path")%>'); position: center; background-size: cover;">
+                        <div class="movie-poster">
+                            <img src='<%# "Dashboard/poster_images/" + Eval ("Poster_path") %>' />
+                        </div>
+                        <div class="movie-info">
+                            <div class="title"><%# Eval("Movie_Title") %></div>
+                            <div class="age">PG-13</div>
+                            <div class="theatre">random info</div>
+                            <div>More and more random info</div>
+                        </div>
+                    </div>
+                    <div class="venue">
+                        <div class="time"><%# Convert.ToDateTime(Session["act_date"]).ToString("dddd") +", "+ Convert.ToDateTime(Session["act_date"]).ToString("MMM") +" "+ Convert.ToDateTime(Session["act_date"]).ToString("dd") +" at "+ Session["noofsseats"] %></div>
+                        <div class="format"><p><%# Eval("Hall_Formart") %></p> <p class="p">.<%# Eval("Hall_Name") %></p></div>
+                        <div class="no_of_tickets"><p>1.Number of tickets</p> <p class="p">Only 9 tickets per transaction is allowed</p></div>
+                    </div>
+                </ItemTemplate>
+            </asp:Repeater>
+            <asp:SqlDataSource ID="Movie" runat="server" ConnectionString="<%$ ConnectionStrings:ConnectionString %>" SelectCommand="SELECT tblShow.Movie_id, tblShow.Hall_Id, tblMovies.Movie_title, tblMovies.Movie_Genre, tblMovies.Poster_path, tblMovies.Movie_Description, tblHalls.Hall_Name, tblHalls.Hall_Formart FROM tblMovies INNER JOIN tblShow ON tblMovies.movie_Id = tblShow.Movie_id INNER JOIN tblHalls ON tblShow.Hall_Id = tblHalls.Hall_Id WHERE (tblShow.Movie_id = @Movie) AND (tblShow.Hall_Id = @hall)">
+                <SelectParameters>
+                    <asp:SessionParameter Name="Movie" SessionField="movie_id" />
+                    <asp:SessionParameter Name="hall" SessionField="hall_id" />
+                </SelectParameters>
+            </asp:SqlDataSource>
+            <asp:SqlDataSource ID="SqlDataSource1" runat="server"></asp:SqlDataSource>
+        </section>
+
+       <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+       </asp:ContentPlaceHolder>
+      <footer>
+          <div class="footer">
+                &copy My site 2022 
+            </div>
+      </footer>
+    </form>
+</body>
+</html>

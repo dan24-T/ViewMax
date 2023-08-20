@@ -1,0 +1,264 @@
+﻿:root {
+    --primary: #c0cfe0;
+    --primary-1: #120445;
+    --primary-2: #210A78;
+    --primary-3: #4019D4;
+    --secondary: #C90058;
+    --secondary-1: #560026;
+    --secondary-2: #EA0066;
+    --secondary-3: #F13386;
+    --base:;
+    --base-1:;
+    --base-2:;
+    --base-3:;
+    --last: #009E6A;
+    --last-1: #00744E;
+    --last-2: #00D18D;
+    --last-3: #2FE0A6;
+}
+
+body{
+    margin: 0;
+    font-family: sans-serif;
+    overflow-x: hidden;
+    background: var(--primary);
+}
+
+header{
+    background: var(--primary);
+    top: 0;
+    z-index: 4;
+}
+
+.nav{
+    width: 98%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.nav_logo{
+    margin: 20px 0 20px 0;
+}
+
+.nav,
+.dropdown,
+ul{
+    display: flex;
+    align-items: center;
+}
+
+ul li{
+    list-style: none;
+}
+
+ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: .75rem; 
+    padding: 0px 10px 0px 10px;
+    position: relative;
+}
+
+ul li a:after{
+    content: "";
+    position: absolute;
+    height: 0%;
+    background: var(--secondary);
+    width: 100%;
+    bottom: -30px;
+    left: 0;
+    transition: .3s;
+}
+
+ul li:hover a:after{
+    height: 600%;
+}
+
+.dropdown{
+    position: absolute;
+    right: 0;
+    z-index: 3;
+}
+
+@media all and (max-width: 600px){
+    
+    header{
+        position: sticky;
+    }
+    .nav{
+        height: 50px;
+    }
+    .dropdown{
+        position: fixed;
+        width: 90%;
+        height: 1000px;
+        background: var(--primary);
+        display: block;
+        top: 0;
+        bottom: 0;
+        transform: translateX(100%);
+        transition: .3s;
+    }
+    ul {
+        display: block;
+        margin: 50px 0px 0 0;
+        padding-inline-start: 0px;
+    }
+    ul li {
+        margin: 0 10px 20px 10px;
+        padding-bottom: 10px;
+        border-bottom: 1px groove white;
+    }
+
+    ul li a{
+        font-size: 1.1em; 
+    }
+
+    ul li a:after{
+        display: none;
+    }
+
+    .nav .navbar_toggler {
+        display: grid !important;
+    }
+
+}
+
+.hamburger {
+    position: absolute;
+    right: 0;
+    z-index: 5;
+}
+
+.navbar_toggler {
+    display: none;
+    height: min-content;
+    margin: 5px 5px 0 0;
+    cursor: pointer;
+}
+
+.navbar_toggler .bar{
+    width: 40px;
+    height: 3px;
+    margin-bottom: 10px;
+    background: #fff;
+    border-radius: 10%;
+    transition: .4s;
+}
+
+.nav input {
+    display: none;
+    
+}
+
+.nav input:checked ~ .dropdown {
+    transform: translateX(0%);
+}
+
+.nav input:checked ~ .hamburger .navbar_toggler .bar:nth-child(1){
+    position: absolute;
+    transform: rotate(-45deg);
+}
+
+.nav input:checked ~ .hamburger .navbar_toggler .bar:nth-child(2) {
+    display: none;
+}
+
+.nav input:checked ~ .hamburger .navbar_toggler .bar:nth-child(3) {
+    transform: rotate(45deg);
+}
+
+ /* CSS for the footer */
+    .footer {
+      background-color: #333;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    .footer p {
+      margin: 0;
+    }
+
+    .footer a {
+      color: #fff;
+      text-decoration: none;
+    }
+
+    .footer a:hover {
+      text-decoration: underline;
+    }
+
+    .footer .social-icons {
+      margin-top: 10px;
+    }
+
+    .footer .social-icons a {
+      margin-right: 10px;
+      font-size: 20px;
+    }
+
+.account{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: White;
+}
+
+.account img{
+    width:20px;
+    height:20px;
+}
+
+.account .pfp{
+    border-radius: 50%;
+    background: gray;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.account .pfp p,
+.account .pfp img{
+    position: absolute;
+}
+
+.account .pfp img{
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    object-position: center;
+    border-radius: 50%;
+}
+
+.account_info {
+    position: absolute;
+    width: 180px;
+    height: auto;
+    background: #83a8d2;
+    right: 0;
+    top: 50px;
+    border: groove 1px azure;
+    border-radius: 15px;
+}
+
+.account_info ul{
+    display: grid;
+    padding-inline-start: 0px;
+    margin-block-end: 0;
+    margin-block-start: 0;
+
+}
+
+.account_info ul li{
+    padding: 15px 0px 15px 20px;
+    border-radius: 15px;
+}
+
+.account_info ul li:hover{
+    background: #c0cfe0;
+}
